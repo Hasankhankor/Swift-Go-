@@ -20,7 +20,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
-    generator: 'v0.dev'
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/placeholder-logo.png',
+  },
+
 }
 
 export default function RootLayout({
@@ -30,6 +35,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Explicit favicon links to help browsers pick up the icon immediately */}
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32 16x16" />
+        {/* SVG favicon for modern browsers (falls back to ICO) */}
+        <link rel="icon" href="/placeholder.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/placeholder-logo.png" sizes="180x180" />
+        <meta name="theme-color" content="#f59e0b" />
+        {/* Optional: manifest and mask-icon could be added here */}
+      </head>
       <body className={poppins.className}>{children}</body>
     </html>
   )
