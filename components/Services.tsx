@@ -1,39 +1,39 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { BookOpen, Coffee, MapPin, Package, Pill, ShoppingCart } from "lucide-react"
 
 const services = [
   {
-    icon: "🍕",
+    icon: <Coffee className="w-12 h-12 text-yellow-500" />,
     title: "Food Delivery",
-    description: "Hot meals delivered fresh to your doorstep",
+    description: "Hot meals delivered fresh to your doorstep.",
   },
   {
-    icon: "🛒",
+    icon: <ShoppingCart className="w-12 h-12 text-yellow-500" />,
     title: "Grocery Delivery",
-    description: "Daily essentials and groceries delivered",
+    description: "Daily essentials and groceries delivered.",
   },
   {
-    icon: "💊",
+    icon: <Pill className="w-12 h-12 text-yellow-500" />,
     title: "Pharmacy & Medicine",
-    description: "Medicines and healthcare products",
+    description: "Medicines and healthcare products.",
   },
   {
-    icon: "📚",
+    icon: <BookOpen className="w-12 h-12 text-yellow-500" />,
     title: "Bookstore Delivery",
-    description: "Books and educational materials",
+    description: "Books and educational materials.",
   },
   {
-    icon: "📦",
+    icon: <Package className="w-12 h-12 text-yellow-500" />,
     title: "Parcel & Document",
-    description: "Safe dispatch of parcels and documents",
+    description: "Safe dispatch of parcels and documents.",
   },
   {
-    icon: "🏃‍♂️",
+    icon: <MapPin className="w-12 h-12 text-yellow-500" />,
     title: "Custom City Errands",
-    description: "Legal deliveries within local city limits",
+    description: "Local deliveries across the city.",
   },
 ]
 

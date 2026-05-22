@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Facebook, Heart, Mail, Smartphone } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -66,7 +67,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.2 }}
                 className="text-2xl hover:text-yellow-400 transition-colors"
               >
-                📘
+                <Facebook className="w-6 h-6" />
               </motion.a>
               <motion.a
                 href="https://wa.me/923139803041"
@@ -75,22 +76,24 @@ export default function Footer() {
                 whileHover={{ scale: 1.2 }}
                 className="text-2xl hover:text-yellow-400 transition-colors"
               >
-                📱
+                <Smartphone className="w-6 h-6" />
               </motion.a>
               <motion.a
                 href="mailto:swiftgodeliveryservices@gmail.com"
                 whileHover={{ scale: 1.2 }}
                 className="text-2xl hover:text-yellow-400 transition-colors"
               >
-                📧
+                <Mail className="w-6 h-6" />
               </motion.a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400 mb-2">© 2025 SwiftGo Delivery Services. All rights reserved.</p>
-          <p className="text-yellow-400 font-semibold">Made with ❤️ in Pakistan</p>
+        <div className="border-t border-gray-800 pt-8 text-center space-y-2">
+          <p className="text-gray-400">© 2025 SwiftGo Delivery Services. All rights reserved.</p>
+          <p className="text-yellow-400 font-semibold inline-flex items-center justify-center gap-2">
+            Made with <Heart className="w-4 h-4 text-red-500" /> in Pakistan
+          </p>
         </div>
       </div>
     </footer>

@@ -126,7 +126,7 @@ export default function RiderPolicy() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Referral Person's Name</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Referral Person&apos;s Name</label>
                 <input
                   type="text"
                   name="referralName"

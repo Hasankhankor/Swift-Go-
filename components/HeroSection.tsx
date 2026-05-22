@@ -2,7 +2,9 @@
 
 import { Canvas } from "@react-three/fiber"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Suspense } from "react"
+import { ArrowRight, Smartphone } from "lucide-react"
 import DeliveryScene from "./3D/DeliveryScene"
 import FloatingPackages from "./3D/FloatingPackages"
 
@@ -53,7 +55,7 @@ export default function HeroSection() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-2xl lg:text-4xl text-black font-medium mb-8 tracking-wide"
               >
-                "Fast, Reliable, and <span className="font-bold text-white">Everywhere</span>"
+                &quot;Fast, Reliable, and <span className="font-bold text-white">Everywhere</span>&quot;
               </motion.p>
 
               <motion.div
@@ -65,11 +67,13 @@ export default function HeroSection() {
                   href="https://wa.me/923139803041"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-black text-yellow-400 font-bold text-xl rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="inline-flex items-center px-6 py-4 bg-black text-yellow-400 font-bold text-lg rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  📱 Order Now on WhatsApp
+                  <Smartphone className="w-5 h-5 mr-3" />
+                  <span>Order Now on WhatsApp</span>
+                  <ArrowRight className="w-4 h-4 ml-3" />
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -80,9 +84,11 @@ export default function HeroSection() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex justify-center lg:justify-end"
             >
-              <img
+              <Image
                 src="/images/new-rider-logo.png"
                 alt="SwiftGo Delivery Rider"
+                width={800}
+                height={800}
                 className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
               />
             </motion.div>

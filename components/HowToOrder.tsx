@@ -1,29 +1,29 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { CheckCircle2, MapPin, ShoppingCart, Truck } from "lucide-react"
 
 const steps = [
   {
-    icon: "🛒",
+    icon: <ShoppingCart className="w-12 h-12 text-black" />,
     title: "Choose Your Items",
-    description: "Food, Pharmacy, Grocery, Books, etc.",
+    description: "Food, pharmacy, grocery, books, and more.",
   },
   {
-    icon: "📍",
+    icon: <MapPin className="w-12 h-12 text-black" />,
     title: "Send Your Location",
-    description: "via WhatsApp or Call",
+    description: "Via WhatsApp or a quick call.",
   },
   {
-    icon: "✅",
+    icon: <CheckCircle2 className="w-12 h-12 text-black" />,
     title: "Confirm Order & Charges",
-    description: "Flat Delivery Rate: Rs. 25/km",
+    description: "Flat delivery rate: Rs. 25/km.",
   },
   {
-    icon: "🚚",
+    icon: <Truck className="w-12 h-12 text-black" />,
     title: "Sit Back & Get It Delivered",
-    description: "Fast and reliable delivery to your door",
+    description: "Fast, secure delivery to your door.",
   },
 ]
 
@@ -47,25 +47,25 @@ export default function HowToOrder() {
           <p className="text-xl text-gray-600">Simple steps to get your items delivered</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="text-center group relative"
+              transition={{ duration: 0.8, delay: index * 0.15 }}
+              className="text-center group relative rounded-3xl bg-white p-8 shadow-2xl border border-gray-100 overflow-hidden"
             >
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center text-5xl mb-6 mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-3xl flex items-center justify-center mb-6 mx-auto shadow-xl"
               >
                 {step.icon}
               </motion.div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 transition-colors group-hover:text-yellow-600">
                 {step.title}
               </h3>
-              <p className="text-gray-600">{step.description}</p>
+              <p className="text-gray-600 leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </div>

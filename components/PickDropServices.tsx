@@ -1,44 +1,44 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { ArrowRight, Banknote, Clock3, DollarSign, Hospital, Home, PackageSearch, School2, Smartphone, Store } from "lucide-react"
 
 const pickDropServices = [
   {
-    icon: "🏠➡️🏢",
+    icon: <Home className="w-14 h-14 text-black" />,
     title: "Home to Office",
-    description: "Documents, files, and personal items",
-    time: "30-60 mins",
+    description: "Documents, files, and personal items.",
+    time: "30–60 mins",
   },
   {
-    icon: "🏪➡️🏠",
+    icon: <Store className="w-14 h-14 text-black" />,
     title: "Store to Home",
-    description: "Shopping items and purchases",
-    time: "45-90 mins",
+    description: "Shopping items and purchases.",
+    time: "45–90 mins",
   },
   {
-    icon: "🏥➡️🏠",
+    icon: <Hospital className="w-14 h-14 text-black" />,
     title: "Hospital to Home",
-    description: "Medical reports and prescriptions",
-    time: "20-45 mins",
+    description: "Medical reports and prescriptions.",
+    time: "20–45 mins",
   },
   {
-    icon: "🎓➡️🏠",
+    icon: <School2 className="w-14 h-14 text-black" />,
     title: "School to Home",
-    description: "Books, assignments, and supplies",
-    time: "25-50 mins",
+    description: "Books, assignments, and supplies.",
+    time: "25–50 mins",
   },
   {
-    icon: "🏦➡️📍",
+    icon: <Banknote className="w-14 h-14 text-black" />,
     title: "Bank Services",
-    description: "Document collection and submission",
-    time: "40-80 mins",
+    description: "Document pick-up and submission.",
+    time: "40–80 mins",
   },
   {
-    icon: "📦➡️📍",
+    icon: <PackageSearch className="w-14 h-14 text-black" />,
     title: "Custom Pickup",
-    description: "Any legal item within city limits",
+    description: "Any legal item within city limits.",
     time: "Variable",
   },
 ]
@@ -85,9 +85,9 @@ export default function PickDropServices() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="inline-flex items-center bg-black text-yellow-400 px-8 py-4 rounded-2xl font-bold text-xl shadow-2xl"
+            className="inline-flex items-center gap-3 bg-black text-yellow-400 px-8 py-4 rounded-2xl font-bold text-xl shadow-2xl"
           >
-            <span className="text-3xl mr-3">💰</span>
+            <DollarSign className="w-6 h-6" />
             <span>Only Rs. 25 per KM</span>
           </motion.div>
         </motion.div>
@@ -102,11 +102,10 @@ export default function PickDropServices() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden"
             >
-              {/* Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
-                <motion.div whileHover={{ scale: 1.2, rotate: 10 }} className="text-6xl mb-6 filter drop-shadow-lg">
+                <motion.div whileHover={{ scale: 1.2, rotate: 10 }} className="mb-6 inline-flex items-center justify-center rounded-3xl bg-yellow-100 p-6 shadow-lg">
                   {service.icon}
                 </motion.div>
 
@@ -114,14 +113,16 @@ export default function PickDropServices() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full">
-                    ⏱️ {service.time}
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-yellow-600 bg-yellow-100 px-4 py-2 rounded-full">
+                    <Clock3 className="w-4 h-4" />
+                    {service.time}
                   </span>
-                  <motion.div whileHover={{ x: 5 }} className="text-yellow-500 font-bold text-lg">
-                    →
+                  <motion.div whileHover={{ x: 5 }} className="inline-flex items-center gap-2 text-yellow-500 font-bold text-lg">
+                    <span>Learn more</span>
+                    <ArrowRight className="w-5 h-5" />
                   </motion.div>
                 </div>
               </div>
@@ -142,9 +143,9 @@ export default function PickDropServices() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold text-xl rounded-2xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-3xl transform"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold text-lg rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-3xl transform"
           >
-            <span className="text-2xl mr-3">📞</span>
+            <Smartphone className="w-5 h-5" />
             Book Your Pickup Now
           </motion.a>
         </motion.div>
